@@ -1,8 +1,11 @@
 package model.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Seller {
+public class Seller implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String name;
 	private String email;
@@ -95,6 +98,12 @@ public class Seller {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
+				+ baseSalary + ", departament=" + departament + "]";
 	}
 	
 	
